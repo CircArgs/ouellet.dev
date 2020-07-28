@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { Heading, Text, Box, List } from "grommet";
+import { Heading, Box, List } from "grommet";
 
 const Interests = (props) => {
   const [inView, setInView] = useState();

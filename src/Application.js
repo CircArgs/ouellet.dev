@@ -1,27 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { Helmet } from "react-helmet";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { client } from "./Utils/apollo";
 import Theme from "./theme";
-import Router from "./Router";
 import Page from "./Components/page/page";
-import Resume from "./Components/resume/resume";
-import GithubCallback from "./Containers/GithubCallback";
-import Home from "./Components/home/home";
-import Blog from "./Components/blog/blog";
-// import Blog from "./Containers/Blog";
-import BlogPost from "./Containers/BlogPost";
+// import GithubCallback from "./Containers/GithubCallback";
 
 var createBrowserHistory = require("history").createBrowserHistory;
 const history = createBrowserHistory();
 
 const Application = () => {
-  const urlParams = new URLSearchParams(window.location.search);
+  // const urlParams = new URLSearchParams(window.location.search);
 
-  if (urlParams.get("code")) {
-    return <GithubCallback />;
-  }
+  // if (urlParams.get("code")) {
+  //   return <GithubCallback />;
+  // }
 
   return (
     <>

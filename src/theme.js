@@ -1,6 +1,5 @@
 import chroma from "chroma-js";
 import { css } from "styled-components";
-import { Redirect } from "react-router-dom";
 
 const theme = {
   global: {

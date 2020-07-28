@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Box, Grid, Grommet } from "grommet";
-// import { useMediaPredicate } from "react-media-hook";
 import { useMeasure } from "react-use";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import Theme from "../../theme";
 import Stars from "../stars/stars";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "../home/home";
 import Blog from "../blog/blog";
 import BlogPost from "../blogPost/blogPost";

@@ -12,6 +12,9 @@ const Blog = (props) => {
     return await getBlogs();
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <Box style={{ zIndex: 3 }} align="center" justify="center" margin="large">
       <Heading margin={{ bottom: "large" }}>Blogs</Heading>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useWindowSize } from "react-use";
 import toPX from "to-px";
 
@@ -29,7 +29,7 @@ const useMin = (...dims) => {
 
   useEffect(() => {
     setD(dims[indexOf(dims.map(toPX), "min")]);
-  }, [typeof document, height, width]);
+  }, [dims, typeof document, height, width]);
   return d;
 };
 
@@ -39,7 +39,7 @@ const useMax = (...dims) => {
 
   useEffect(() => {
     setD(dims[indexOf(dims.map(toPX), "max")]);
-  }, [typeof document, height, width]);
+  }, [dims, typeof document, height, width]);
   return d;
 };
 

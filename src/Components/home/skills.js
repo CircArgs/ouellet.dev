@@ -1,15 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useMin } from "../../Utils/cssMath";
-import {
-  Heading,
-  Text,
-  Box,
-  Drop,
-  Image,
-  Avatar,
-  Grommet,
-  Video,
-} from "grommet";
+import { Heading, Box, Drop } from "grommet";
 import Theme from "../../theme";
 import {
   DiRust,

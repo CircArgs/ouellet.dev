@@ -1,24 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAsync } from "react-use";
 import { Github } from "grommet-icons";
-import {
-  Heading,
-  Text,
-  Box,
-  Anchor,
-  Drop,
-  Image,
-  Avatar,
-  Grommet,
-  Paragraph,
-  Button,
-  Video,
-} from "grommet";
+import { Heading, Text, Box, Anchor, Paragraph, Button } from "grommet";
 import Loading from "../../loading/loading";
 import Card from "./card";
 import HyperSpace from "../../stars/hyperspace";
 import { getProjects } from "./graphql";
-import Theme from "../../../theme";
 
 const OpenSource = (props) => {
   const [inView, setInView] = useState();

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useAsync } from "react-use";
-import { Box, Heading, Paragraph, Text, Anchor, Avatar } from "grommet";
+import { Box, Heading, Text, Anchor, Avatar } from "grommet";
 import readingTime from "reading-time";
 import PostBody from "./postBody";
 import { getBlog } from "./graphql";

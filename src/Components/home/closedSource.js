@@ -1,20 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useMin } from "../../Utils/cssMath";
-import {
-  Heading,
-  Text,
-  Box,
-  Drop,
-  Image,
-  Avatar,
-  Grommet,
-  Video,
-  Anchor,
-  Paragraph,
-} from "grommet";
+import { Heading, Text, Box, Anchor, Paragraph } from "grommet";
 import Card from "./openSource/card";
 import HyperSpace from "../stars/hyperspace";
-import Theme from "../../theme";
 
 const bigProjects = [
   {
@@ -85,6 +72,7 @@ const ProjectCard = (props) => {
         >
           <Box width="15rem" height="100%" justify="center" align="center">
             <img
+              alt={props.alt}
               src={props.image}
               style={{ objectFit: "contain", width: "100%", height: "100%" }}
             />

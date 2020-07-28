@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Heading, Text, Box, Image, Avatar, Video } from "grommet";
+import { Heading, Text, Box, Video } from "grommet";
 import { useWindowSize } from "react-use";
 import Typewriter from "typewriter-effect";
 import portrait from "../../Assets/Img/painting/sped/output_s_30.mp4";

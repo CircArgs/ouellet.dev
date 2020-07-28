@@ -1,6 +1,6 @@
 import React from "react";
 import { useAsync } from "react-use";
-import { Box, Heading, Paragraph, Text, Anchor } from "grommet";
+import { Box } from "grommet";
 import { getResumeHtml, getResumeCss } from "./graphql";
 import parse from "html-react-parser";
 

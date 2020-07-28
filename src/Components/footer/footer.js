@@ -30,7 +30,7 @@ const Media = () => (
 );
 
 const MyFooter = ({ darkMode, ...props }) => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
   return (
     <Footer
       style={{

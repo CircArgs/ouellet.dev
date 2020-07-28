@@ -1,20 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import {
-  Heading,
-  Text,
-  Box,
-  Drop,
-  Image,
-  Avatar,
-  Grommet,
-  Video,
-  Anchor,
-  Paragraph,
-} from "grommet";
+import { Heading, Box, Anchor, Paragraph } from "grommet";
 import { MailOption, Phone } from "grommet-icons";
 import Typewriter from "typewriter-effect";
-import Theme from "../../theme";
 
 const Contact = (props) => {
   const [initialHeader, setInitialHeader] = useState(true);

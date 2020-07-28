@@ -2,25 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { useAsync } from "react-use";
 import { Article } from "grommet-icons";
 import { HashLink as Link } from "react-router-hash-link";
-import {
-  Heading,
-  Text,
-  Box,
-  Anchor,
-  Drop,
-  Image,
-  Avatar,
-  Grommet,
-  Paragraph,
-  Button,
-  Video,
-} from "grommet";
+import { Heading, Text, Box, Anchor, Paragraph, Button } from "grommet";
 import Loading from "../../loading/loading";
 import Card from "../openSource/card";
 import HyperSpace from "../../stars/hyperspace";
 import { getBlogs } from "../../blog/graphql";
-import Theme from "../../../theme";
-import styled from "styled-components";
 
 const OpenSource = (props) => {
   const [inView, setInView] = useState();

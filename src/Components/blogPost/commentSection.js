@@ -1,5 +1,5 @@
 import React from "react";
-import { Anchor, Box, Text, Markdown } from "grommet";
+import { Box } from "grommet";
 import PostBody from "./postBody";
 const CommentsSection = ({ postUrl, comments }) => {
   return (

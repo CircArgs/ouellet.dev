@@ -1,18 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useWindowSize } from "react-use";
 import { HashLink as Link } from "react-router-hash-link";
-import {
-  Header,
-  Box,
-  Button,
-  ResponsiveContext,
-  Menu,
-  Nav,
-  Anchor,
-  Heading,
-} from "grommet";
+import { Header, Box, Button, Menu, Nav, Anchor } from "grommet";
 import styled from "styled-components";
-import Theme from "../../theme";
 import Logo from "../logo/logo";
 import {
   Menu as Hamburger,
@@ -71,7 +61,7 @@ const links = {
 
 export default ({ setDarkMode, darkMode, setHeaderHeight }) => {
   const [collapseMenu, setCollapseMenu] = useState(false);
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
   const myRef = useRef();
   useEffect(() => {
     if ((myRef != null) & (myRef.current != null)) {
