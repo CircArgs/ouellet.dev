@@ -31,7 +31,7 @@
     "react-reactions": "github:randomdipesh/react-reactions",
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^2.0.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^3.4.1",
     "react-syntax-highlighter": "^12.2.1",
     "react-use": "^15.3.2",
     "reading-time": "^1.2.0",
