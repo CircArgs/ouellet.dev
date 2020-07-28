@@ -66,10 +66,7 @@ const links = {
   Blog: { path: "/blog", icon: <Article /> },
   Contact: { path: "/#contact", icon: <ContactInfo /> },
   Projects: { path: "/#openSource", icon: <Code /> },
-  Resume: {
-    href: "https://circargs.github.io/resume/",
-    icon: <Catalog />,
-  },
+  Resume: { path: "/resume", icon: <Catalog /> },
 };
 
 export default ({ setDarkMode, darkMode, setHeaderHeight }) => {

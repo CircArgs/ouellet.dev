@@ -9,6 +9,7 @@ import {
   Avatar,
   Grommet,
   Video,
+  Anchor,
   Paragraph,
 } from "grommet";
 import { MailOption, Phone } from "grommet-icons";
@@ -62,15 +63,15 @@ const Contact = (props) => {
                     onInit={(typewriter) => {
                       typewriter
                         .changeDelay(70)
-                        .pauseFor(500)
+                        .pauseFor(300)
                         .typeString("Questions?")
-                        .pauseFor(500)
+                        .pauseFor(300)
                         .deleteAll()
                         .typeString("Comments?")
-                        .pauseFor(500)
+                        .pauseFor(300)
                         .deleteAll()
                         .typeString("Get in Touch.")
-                        .pauseFor(500)
+                        .pauseFor(300)
                         .callFunction(() => setInitialHeader(false))
                         .start();
                     }}
@@ -83,20 +84,20 @@ const Contact = (props) => {
             <Box
               margin="large"
               align="center"
-              animation={{ type: "fadeIn", delay: 6750 }}
+              animation={{ type: "fadeIn", delay: 3000 }}
             >
-              <Box direction="row">
+              <Box margin="small" direction="row">
                 <Phone size="medium" />
                 <Paragraph margin={{ horizontal: "small" }}>
-                  {" "}
                   (860) 591-9646
                 </Paragraph>
               </Box>
-              <Box direction="row">
+              <Box margin="small" direction="row">
                 <MailOption size="medium" />
                 <Paragraph margin={{ horizontal: "small" }}>
-                  {" "}
-                  Nicholas.P.Ouellet@gmail.com
+                  <Anchor href="mailto:Nick@Ouellet.dev">
+                    Nick@Ouellet.dev
+                  </Anchor>
                 </Paragraph>
               </Box>
             </Box>

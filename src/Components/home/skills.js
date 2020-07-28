@@ -21,6 +21,7 @@ import {
   DiSpark,
   DiMongodb,
   DiJavascript1,
+  DiTerminal,
 } from "react-icons/di";
 
 import { GrGraphQl, GrDocker } from "react-icons/gr";
@@ -42,6 +43,7 @@ const skills = {
   Sql: FaDatabase,
   Mongodb: DiMongodb,
   GraphQl: GrGraphQl,
+  Shell: DiTerminal,
 };
 
 const Skill = ({ animation, ...props }) => {

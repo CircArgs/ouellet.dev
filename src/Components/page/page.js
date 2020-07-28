@@ -11,6 +11,7 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import Home from "../home/home";
 import Blog from "../blog/blog";
 import BlogPost from "../blogPost/blogPost";
+import Resume from "../resume/resume";
 
 import {
   FalconActor,
@@ -38,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html{
-  min-height: 100% !important;
+  /* min-height: 100% !important; */
     height: 100%;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -130,276 +131,292 @@ const Page = (props) => {
   const [footerRef, { height: footerHeight }] = useMeasure();
 
   return (
-    <>
-      <Box
-        background={darkMode ? "brand" : "brand-invert"}
-        align="center"
-        direction="column"
-        height="100vh"
-        width="100vw"
-        overflow={{ horizontal: "hidden" }}
-      >
-        <Grommet theme={Theme}>
-          <GlobalStyle
-            light={
-              darkMode
-                ? Theme.global.colors.brand.light
-                : Theme.global.colors.brand.dark
-            }
-            dark={
-              darkMode
-                ? Theme.global.colors.brand.dark
-                : Theme.global.colors.brand.light
-            }
+    <Switch>
+      {" "}
+      <Route
+        path="/resume"
+        render={(props) => (
+          <Resume
+            darkMode={darkMode}
+            headerHeight={headerHeight}
+            footerHeight={footerHeight}
+            {...props}
           />
-          <Container fill>
-            <Header
-              setHeaderHeight={setHeaderHeight}
-              setDarkMode={setDarkMode}
-              darkMode={darkMode}
-            />
+        )}
+      />
+      <Route
+        path="/"
+        render={() => (
+          <Box
+            background={darkMode ? "brand" : "brand-invert"}
+            align="center"
+            direction="column"
+            height="100vh"
+            width="100vw"
+            overflow={{ horizontal: "hidden" }}
+          >
+            <Grommet theme={Theme}>
+              <GlobalStyle
+                light={
+                  darkMode
+                    ? Theme.global.colors.brand.light
+                    : Theme.global.colors.brand.dark
+                }
+                dark={
+                  darkMode
+                    ? Theme.global.colors.brand.dark
+                    : Theme.global.colors.brand.light
+                }
+              />
+              <Container fill>
+                <Header
+                  setHeaderHeight={setHeaderHeight}
+                  setDarkMode={setDarkMode}
+                  darkMode={darkMode}
+                />
 
-            <Box
-              margin={{ top: headerHeight + "px" }}
-              gridArea="main"
-              align="center"
-              justify="start"
-              style={{
-                minHeight: `calc(100vh - ${headerHeight + footerHeight}px)`,
-                overflow: "auto",
-                position: "relative",
-              }}
-              background={darkMode ? "brand" : "brand-invert"}
-            >
-              {darkMode ? (
                 <Box
+                  margin={{ top: headerHeight + "px" }}
+                  gridArea="main"
+                  align="center"
+                  justify="start"
                   style={{
-                    position: "absolute",
-                    height: "100%",
-                    width: "100%",
-                    overflow: "hidden",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
+                    minHeight: `calc(100vh - ${headerHeight + footerHeight}px)`,
+                    overflow: "auto",
+                    position: "relative",
                   }}
+                  background={darkMode ? "brand" : "brand-invert"}
                 >
-                  <Stars
-                    width="100%"
-                    height="100%"
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                    animation={{ type: "fadeIn", duration: 10000 }}
-                  >
+                  {darkMode ? (
                     <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
                       style={{
-                        overflow: "hidden",
                         position: "absolute",
+                        height: "100%",
+                        width: "100%",
+                        overflow: "hidden",
                         top: "50%",
                         left: "50%",
-                        transform: "translate(-25%, -25%) rotateZ(45deg)",
+                        transform: "translate(-50%, -50%)",
                       }}
-                      align="center"
-                      justify="center"
                     >
-                      <ReaperActor
-                        height="3rem"
-                        width="3rem"
-                        speed="70s"
-                        style={{ transform: "rotateZ(-45deg)" }}
-                      />
-                    </Box>
-                    <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
-                      style={{
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(30%, -25%) rotateZ(-33deg)",
-                      }}
-                      align="center"
-                      justify="center"
-                    >
-                      <ReaperActor
-                        height="7rem"
-                        width="7rem"
-                        speed="28s"
-                        style={{ transform: "rotateZ(33deg)" }}
-                      />
-                    </Box>
-                    <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
-                      style={{
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%) rotateZ(25deg)",
-                      }}
-                      align="center"
-                      justify="center"
-                    >
-                      <ReaperActor
-                        height="6rem"
-                        width="6rem"
-                        speed="40s"
-                        style={{ transform: "rotateZ(-25deg)" }}
-                      />
-                    </Box>
-                    <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
-                      style={{
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-70%, -50%) rotateZ(190deg)",
-                      }}
-                      align="center"
-                      justify="center"
-                    >
-                      <ReaperActor
-                        height="2rem"
-                        width="2rem"
-                        speed="20s"
-                        style={{ transform: "rotateZ(-190deg)" }}
-                      />
-                    </Box>
-                    <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
-                      style={{
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%) rotateZ(200deg)",
-                      }}
-                      align="center"
-                      justify="center"
-                    >
-                      <FalconActor
-                        height="10rem"
-                        width="10rem"
-                        speed="30s"
-                        distance="5000%"
+                      <Stars
+                        width="100%"
+                        height="100%"
                         style={{
-                          transform: "rotateZ(180deg)",
-                          // animationDelay: "5s",
-                          // animationTimingFunction: "cubic-bezier(0,1,0,1)",
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
                         }}
-                      />
+                        animation={{ type: "fadeIn", duration: 10000 }}
+                      >
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-25%, -25%) rotateZ(45deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <ReaperActor
+                            height="3rem"
+                            width="3rem"
+                            speed="70s"
+                            style={{ transform: "rotateZ(-45deg)" }}
+                          />
+                        </Box>
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(30%, -25%) rotateZ(-33deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <ReaperActor
+                            height="7rem"
+                            width="7rem"
+                            speed="28s"
+                            style={{ transform: "rotateZ(33deg)" }}
+                          />
+                        </Box>
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%) rotateZ(25deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <ReaperActor
+                            height="6rem"
+                            width="6rem"
+                            speed="40s"
+                            style={{ transform: "rotateZ(-25deg)" }}
+                          />
+                        </Box>
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-70%, -50%) rotateZ(190deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <ReaperActor
+                            height="2rem"
+                            width="2rem"
+                            speed="20s"
+                            style={{ transform: "rotateZ(-190deg)" }}
+                          />
+                        </Box>
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%) rotateZ(200deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <FalconActor
+                            height="10rem"
+                            width="10rem"
+                            speed="30s"
+                            distance="5000%"
+                            style={{
+                              transform: "rotateZ(180deg)",
+                              // animationDelay: "5s",
+                              // animationTimingFunction: "cubic-bezier(0,1,0,1)",
+                            }}
+                          />
+                        </Box>
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%) rotateZ(-80deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <NormandyActor
+                            height="10rem"
+                            width="10rem"
+                            speed="25s"
+                            distance="5000%"
+                            style={{
+                              transform: "rotateZ(75deg)",
+                              // animationDelay: "5s",
+                              // animationTimingFunction: "cubic-bezier(0,1,0,1)",
+                            }}
+                          />
+                        </Box>
+                        <Box
+                          height="calc(100vw + 100vh)"
+                          width="calc(100vw + 100vh)"
+                          style={{
+                            overflow: "hidden",
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-70%, -50%) rotateZ(170deg)",
+                          }}
+                          align="center"
+                          justify="center"
+                        >
+                          <DeathStarActor
+                            height="15rem"
+                            width="15rem"
+                            speed="60s"
+                            distance="5000%"
+                            style={{
+                              transform: "rotateZ(180deg)",
+                              // animationDelay: "5s",
+                              // animationTimingFunction: "cubic-bezier(0,1,0,1)",
+                            }}
+                          />
+                        </Box>
+                      </Stars>
                     </Box>
-                    <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
-                      style={{
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%) rotateZ(-80deg)",
-                      }}
-                      align="center"
-                      justify="center"
-                    >
-                      <NormandyActor
-                        height="10rem"
-                        width="10rem"
-                        speed="25s"
-                        distance="5000%"
-                        style={{
-                          transform: "rotateZ(75deg)",
-                          // animationDelay: "5s",
-                          // animationTimingFunction: "cubic-bezier(0,1,0,1)",
-                        }}
+                  ) : null}
+
+                  <Route
+                    exact
+                    path="/"
+                    render={(props) => (
+                      <Home
+                        darkMode={darkMode}
+                        headerHeight={headerHeight}
+                        footerHeight={footerHeight}
+                        {...props}
                       />
-                    </Box>
-                    <Box
-                      height="calc(100vw + 100vh)"
-                      width="calc(100vw + 100vh)"
-                      style={{
-                        overflow: "hidden",
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-70%, -50%) rotateZ(170deg)",
-                      }}
-                      align="center"
-                      justify="center"
-                    >
-                      <DeathStarActor
-                        height="15rem"
-                        width="15rem"
-                        speed="60s"
-                        distance="5000%"
-                        style={{
-                          transform: "rotateZ(180deg)",
-                          // animationDelay: "5s",
-                          // animationTimingFunction: "cubic-bezier(0,1,0,1)",
-                        }}
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/blog"
+                    render={(props) => (
+                      <Blog
+                        darkMode={darkMode}
+                        headerHeight={headerHeight}
+                        footerHeight={footerHeight}
+                        {...props}
                       />
-                    </Box>
-                  </Stars>
+                    )}
+                  />
+
+                  <Route
+                    exact
+                    path="/blog/:issueNumber"
+                    render={(props) => (
+                      <BlogPost
+                        darkMode={darkMode}
+                        headerHeight={headerHeight}
+                        footerHeight={footerHeight}
+                        {...props}
+                      />
+                    )}
+                  />
                 </Box>
-              ) : null}
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={(props) => (
-                    <Home
-                      darkMode={darkMode}
-                      headerHeight={headerHeight}
-                      footerHeight={footerHeight}
-                      {...props}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/blog"
-                  render={(props) => (
-                    <Blog
-                      darkMode={darkMode}
-                      headerHeight={headerHeight}
-                      footerHeight={footerHeight}
-                      {...props}
-                    />
-                  )}
-                />
 
-                <Route
-                  exact
-                  path="/blog/:issueNumber"
-                  render={(props) => (
-                    <BlogPost
-                      darkMode={darkMode}
-                      headerHeight={headerHeight}
-                      footerHeight={footerHeight}
-                      {...props}
-                    />
-                  )}
-                />
-              </Switch>
-            </Box>
-
-            <Box gridArea="footer" ref={footerRef}>
-              <Footer darkMode={darkMode} />
-            </Box>
-          </Container>
-        </Grommet>
-      </Box>
-    </>
+                <Box gridArea="footer" ref={footerRef}>
+                  <Footer darkMode={darkMode} />
+                </Box>
+              </Container>
+            </Grommet>
+          </Box>
+        )}
+      />
+    </Switch>
   );
 };
 

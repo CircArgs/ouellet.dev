@@ -6,6 +6,7 @@ import { client } from "./Utils/apollo";
 import Theme from "./theme";
 import Router from "./Router";
 import Page from "./Components/page/page";
+import Resume from "./Components/resume/resume";
 import GithubCallback from "./Containers/GithubCallback";
 import Home from "./Components/home/home";
 import Blog from "./Components/blog/blog";
@@ -40,7 +41,7 @@ const Application = () => {
       </Helmet>
       <ApolloProvider client={client}>
         <HashRouter history={history}>
-          <Page></Page>
+          <Page />
         </HashRouter>
       </ApolloProvider>
     </>

@@ -8,8 +8,9 @@ export const config = {
 
   // Your Github Repo Name Where You Have your issues as Blog
   githubRepo: "circargs.github.io",
-  // resumeRepo: "resume",
-  // resumeFile: "main:resume.md", //branch:filePath
+  resumeRepo: "resume",
+  resumeHtml: "master:index.html", //branch:filePath
+  resumeCss: "master:resume.css", //branch:filePath
   resumePdfUrl: "https://github.com/CircArgs/resume/raw/main/resume.pdf",
   // Set it to true if you have a Github app to add to this project
   // and fill the client ID & secret
