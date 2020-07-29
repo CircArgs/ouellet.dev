@@ -108,9 +108,10 @@ export default ({ setDarkMode, darkMode, setHeaderHeight }) => {
               dropAlign={{ left: "left", top: "bottom" }}
               margin={{ horizontal: "1rem" }}
               icon={<Hamburger size="large" />}
-              items={Object.keys(links).map((k) => ({
+              items={Object.keys(links).map((k, i) => ({
                 label: (
                   <Box
+                    margin={{ top: i === 0 ? "1.5rem" : 0 }}
                     fill
                     key={k}
                     pad=".3rem"
