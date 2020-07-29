@@ -11,14 +11,15 @@ const Intro = (props) => {
   useEffect(() => {
     setTimeout(() => setPulsing(false), 8750);
   }, []);
-  let portraitDim = 0.33 * windowWidth;
+  let portraitDim = 0.3 * windowWidth;
   let textWidth = 0.4 * windowWidth;
   let textHeight = props.height;
   if (windowWidth < windowHeight) {
-    portraitDim = 0.33 * props.height;
+    portraitDim = 0.3 * props.height;
     textWidth = windowWidth;
     textHeight = 0.5 * props.height;
   }
+  console.log(portraitDim, props.height);
   return (
     <div>
       <Box
