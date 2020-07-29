@@ -1,19 +1,39 @@
 import React from "react";
-import { Markdown } from "grommet";
-import { CodeBlock } from "./codeblock";
+import { Markdown, Box } from "grommet";
+import { CodeBlock, CodeInline, HyperLink, Paragraph } from "./codeblock";
+
 const PostBody = (props) => {
   return (
-    <Markdown
-      options={{
-        overrides: {
-          pre: {
-            component: CodeBlock,
+    <Box style={{ position: "relative" }} pad="small">
+      <Box
+        elevation="xlarge"
+        background="background-front"
+        style={{ position: "absolute", top: 0, left: 0, opacity: 0.5 }}
+        fill
+      ></Box>
+      <Markdown
+        style={{ zIndex: 2, maxWidth: "95vw" }}
+        id="postBody"
+        options={{
+          overrides: {
+            pre: {
+              component: CodeBlock,
+            },
+            code: {
+              component: CodeInline,
+            },
+            a: {
+              component: HyperLink,
+            },
+            p: {
+              component: Paragraph,
+            },
           },
-        },
-      }}
-    >
-      {props.children}
-    </Markdown>
+        }}
+      >
+        {props.children}
+      </Markdown>
+    </Box>
   );
 };
 

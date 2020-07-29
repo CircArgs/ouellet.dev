@@ -4,12 +4,13 @@ import { Box, Heading, Text, Anchor, Avatar } from "grommet";
 import readingTime from "reading-time";
 import PostBody from "./postBody";
 import { getBlog } from "./graphql";
+
 import styled from "styled-components";
 import Loading from "../loading/loading";
 import CommentsSection from "./commentSection";
 const BlogContainer = styled(Box)`
   z-index: 9;
-  margin: 5rem 20% 5rem 20%;
+  /* margin: 5rem 20% 5rem 20%;
   ${(props) => props.theme.media.small`
   margin-left: 10rem;
   margin-right: 10rem;
@@ -17,7 +18,7 @@ const BlogContainer = styled(Box)`
   ${(props) => props.theme.media.small`
   margin-left: 2rem;
   margin-right: 2rem;
-`}
+`} */
 `;
 
 const BlogPost = (props) => {
@@ -36,7 +37,6 @@ const BlogPost = (props) => {
     );
   if (value != null) {
     const issue = value.data.repository.issue;
-    console.log(issue);
     const date = new Date(issue.updatedAt);
 
     const dateTimeFormat = new Intl.DateTimeFormat("en", {
@@ -53,15 +53,15 @@ const BlogPost = (props) => {
       { value: year },
     ] = dateTimeFormat.formatToParts(date);
     return (
-      <BlogContainer margin="medium" width="xlarge" align="center">
+      <BlogContainer margin="medium" width="large" align="center">
         <Box width="100%" align="center">
-          <Heading>{issue.title}</Heading>
+          <Heading textAlign="center">{issue.title}</Heading>
           <Box
             margin="small"
             width="100%"
             direction="row"
             align="center"
-            justify="center"
+            justify="start"
           >
             <Anchor href={issue.author.url}>
               <Avatar src={issue.author.avatarUrl} />
@@ -94,7 +94,6 @@ const BlogPost = (props) => {
         </Box>
 
         <Box
-          fill
           align="center"
           margin={{ vertical: "3rem" }}
           pad={{ bottom: "3rem" }}

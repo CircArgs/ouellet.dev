@@ -21,7 +21,7 @@ const theme = {
         dark: chroma("#111111").brighten(2),
         light: chroma("#EEEEEE").darken(2),
       },
-      "background-front": { dark: "#222222", light: "#FFFFFF" },
+      "background-front": { dark: "#222222", light: "#CCCCCC" },
       "background-contrast": { dark: "#FFFFFF11", light: "#11111111" },
       "active-background": "background-contrast",
       "active-text": "text-strong",
