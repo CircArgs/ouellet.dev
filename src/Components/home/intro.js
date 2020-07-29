@@ -92,8 +92,8 @@ const Intro = (props) => {
                   left: 0,
                   zIndex: 1,
                 }}
-                width="100%"
-                height="100%"
+                width={portraitDim + "px"}
+                height={portraitDim + "px"}
                 controls={false}
                 muted
                 autoPlay

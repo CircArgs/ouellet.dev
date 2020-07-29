@@ -1,7 +1,7 @@
 {
-  "name": "blog",
-  "homepage": "https://circargs.github.io",
-  "version": "0.1.0",
+  "name": "NickOuellet",
+  "homepage": "https://www.ouellet.dev/",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
