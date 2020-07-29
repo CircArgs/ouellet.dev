@@ -2,6 +2,9 @@ import React from "react";
 import { Text } from "grommet";
 import styled from "styled-components";
 import Anchor from "../anchor/anchor";
+import { config } from "../../config";
+import { HashLink as Link } from "react-router-hash-link";
+
 const Logo = styled(Text)`
   font-size: ${(props) => (1 / props.level) * 4}rem;
   // white-space: nowrap;
@@ -18,16 +21,18 @@ const Logo = styled(Text)`
 
 export default (props) => {
   return (
-    <Anchor href="/">
-      <Logo
-        level={1}
-        color="brand"
-        margin="small"
-        {...props}
-        a11yTitle="Nick Ouellet"
-      >
-        {props.text ? props.text : "Nick Ouellet"}
-      </Logo>
+    <Anchor>
+      <Link to="/">
+        <Logo
+          level={1}
+          color="brand"
+          margin="small"
+          {...props}
+          a11yTitle="Nick Ouellet"
+        >
+          {props.text ? props.text : "Nick Ouellet"}
+        </Logo>
+      </Link>
     </Anchor>
   );
 };

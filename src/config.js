@@ -1,4 +1,5 @@
 export const config = {
+  homepage: "https://www.ouellet.dev",
   // Your Github Converted Token To Know How To Get Your Token Look at Readme.md
   githubConvertedToken:
     "ZTM3ZmFlNGRlYjU5OTVjYjM5YTdhMjEwNDgzZjQwYzM4ZGU4YTBlOA==",
