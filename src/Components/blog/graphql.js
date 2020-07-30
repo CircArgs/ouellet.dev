@@ -7,7 +7,7 @@ export const getBlogs = async () => {
     query: gql`
     {
       repository(owner: "${config.githubUserName}", name: "${config.githubRepo}") {
-        issues(first: 100, states: OPEN, filterBy: { labels: "blog" }) {
+        issues(filterBy: {labels: "blog"}, orderBy: {field: CREATED_AT, direction: DESC}, first: 100) {
           nodes {
             title
             body
@@ -27,6 +27,7 @@ export const getBlogs = async () => {
               login
             }
             updatedAt
+            createdAt
             id
           }
         }

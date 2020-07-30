@@ -1,6 +1,6 @@
 import React from "react";
 import { Markdown, Box } from "grommet";
-import { CodeBlock, CodeInline, HyperLink, Paragraph } from "./codeblock";
+import { CodeBlock, CodeInline, HyperLink, Paragraph, Ul } from "./overrides";
 
 const PostBody = (props) => {
   return (
@@ -27,6 +27,9 @@ const PostBody = (props) => {
             },
             p: {
               component: Paragraph,
+            },
+            ul: {
+              component: Ul,
             },
           },
         }}

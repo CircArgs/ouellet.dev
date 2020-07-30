@@ -58,17 +58,7 @@ const OpenSource = (props) => {
           </Heading>
           <Box direction="row" align="center" justify="around" wrap>
             {loading ? (
-              <Box
-                direction="column"
-                margin="medium"
-                align="center"
-                justify="center"
-              >
-                <Loading />
-                <Box margin="medium" animation="pulse">
-                  Loading...
-                </Box>
-              </Box>
+              <Loading />
             ) : (
               <>
                 {value == null

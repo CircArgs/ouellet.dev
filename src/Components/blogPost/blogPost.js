@@ -4,7 +4,7 @@ import { Box, Heading, Text, Anchor, Avatar } from "grommet";
 import readingTime from "reading-time";
 import PostBody from "./postBody";
 import { getBlog } from "./graphql";
-
+import githubDateString from "../../Utils/githubDateString";
 import styled from "styled-components";
 import Loading from "../loading/loading";
 import CommentsSection from "./commentSection";
@@ -26,32 +26,12 @@ const BlogPost = (props) => {
     return await getBlog(props.match.params.issueNumber);
   }, []);
 
-  if (loading)
-    return (
-      <Box fill margin="xlarge" justify="center" align="center">
-        <Loading />
-        <Box animation="pulse" margin="medium">
-          Loading...
-        </Box>
-      </Box>
-    );
+  if (loading) return <Loading />;
   if (value != null) {
     const issue = value.data.repository.issue;
-    const date = new Date(issue.updatedAt);
+    const updatedAt = githubDateString(issue.updatedAt);
+    const createdAt = githubDateString(issue.createdAt);
 
-    const dateTimeFormat = new Intl.DateTimeFormat("en", {
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-    });
-
-    const [
-      { value: month },
-      ,
-      { value: day },
-      ,
-      { value: year },
-    ] = dateTimeFormat.formatToParts(date);
     return (
       <BlogContainer margin="medium" width="large" align="center">
         <Box width="100%" align="center">
@@ -79,7 +59,14 @@ const BlogPost = (props) => {
                   margin={{ right: "small" }}
                   size="small"
                   color="light-4"
-                >{`${month}-${day}-${year}`}</Text>
+                >{`Written: ${createdAt}`}</Text>
+                {createdAt !== updatedAt ? (
+                  <Text
+                    margin={{ right: "small" }}
+                    size="small"
+                    color="light-4"
+                  >{`Last Updated: ${updatedAt}`}</Text>
+                ) : null}
                 <Anchor
                   margin={{ right: "small" }}
                   href={issue.url}

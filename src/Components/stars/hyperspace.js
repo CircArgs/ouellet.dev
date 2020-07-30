@@ -5,6 +5,7 @@ const HyperSpace = styled(Box)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transform-origin: center;
   position: absolute;
   overflow: hidden;
 

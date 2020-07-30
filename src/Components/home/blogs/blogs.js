@@ -62,17 +62,7 @@ const OpenSource = (props) => {
         </Box>
         <Box direction="row" align="center" justify="around" wrap>
           {loading ? (
-            <Box
-              direction="column"
-              margin="medium"
-              align="center"
-              justify="center"
-            >
-              <Loading />
-              <Box margin="medium" animation="pulse">
-                Loading...
-              </Box>
-            </Box>
+            <Loading />
           ) : (
             <>
               {value == null
@@ -96,7 +86,7 @@ const OpenSource = (props) => {
                             align="center"
                             justify="center"
                             height="25rem"
-                            width="35rem"
+                            width="40rem"
                             style={{
                               position: "relative",
                               borderRadius: "10px",
@@ -108,11 +98,12 @@ const OpenSource = (props) => {
                               style: "solid",
                               side: "all",
                             }}
+                            pad="small"
                             elevation={!props.darkMode ? "wideMed" : null}
                             darkMode={props.darkMode}
                           >
                             <HyperSpace
-                              height="44rem"
+                              height="50rem"
                               width="50rem"
                               className="fade"
                               style={{

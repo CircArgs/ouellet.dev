@@ -30,6 +30,7 @@ export const getBlog = async (issueNumber) => {
               }
             }
             updatedAt
+            createdAt
             id
             comments(first:100) {
               nodes {
